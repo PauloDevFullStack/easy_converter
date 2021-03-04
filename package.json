@@ -1,0 +1,16 @@
+{
+  "name": "easy_converter",
+  "version": "1.0.0",
+  "description": "Biblioteca easy converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "easy",
+    "converter"
+  ],
+  "author": "paulodevfullstack@gmail.com <paulodevfullstack@gmail.com> (https://paulodevfullstack.com/)",
+  "license": "MIT"
+}
