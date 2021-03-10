@@ -6,27 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Converter String</title>
-    <script src="spec.js"></script>
-    <script src="index.js"></script>
+    <script src="src/spec.js"></script>
+    <script src="src/index.js"></script>
 </head>
 <body>
     <script>
         assert.describe("Converter UpperCase", () => {
             assert(converterToUpperCase(12121) === "12121", "converterToUpperCase(12121) deve retornar '12121'")
+            assert(converterToUpperCase('12121  12121') === '12121  12121', "converterToUpperCase(12121  12121) deve retornar '12121  12121'")
+            assert(converterToUpperCase("são") === "SÃO", "converterToUpperCase('são') deve retornar SÃO")
             assert(converterToUpperCase("3232texto") === "3232TEXTO", "converterToUpperCase('3232texto') deve retornar '3232TEXTO'")
+            assert(converterToUpperCase("ADFD       adfd") === "ADFD ADFD", "converterToUpperCase('ADFD      adfd') deve retornar ADFD ADFD")
+            assert(converterToUpperCase() === "", "converterToUpperCase('') deve retornar ''")
             assert(converterToUpperCase("3232 texto") === "3232 TEXTO", "converterToUpperCase('3232 texto') deve retornar '3232 TEXTO'")
             assert(converterToUpperCase("texto") === "TEXTO", "converterToUpperCase('texto') deve retornar 'TEXTO'")
-            assert(converterToUpperCase() === "", "converterToUpperCase('') deve retornar ''")
             assert(converterToUpperCase("           ") === "", "converterToUpperCase('      ') deve retornar ''")
             assert(converterToUpperCase("           ADFD") === "ADFD",  'converterToUpperCase("      ADFD") deve retornar ADFD')
             assert(converterToUpperCase("ADFD           ") === "ADFD", "converterToUpperCase('ADFD      ') deve retornar ADFD")
-            assert(converterToUpperCase("ADFD       adfd") === "ADFD ADFD", "converterToUpperCase('ADFD      adfd') deve retornar ADFD ADFD")
             assert(converterToUpperCase("adfg adfw") === "ADFG ADFW", "converterToUpperCase('adfg adfw') deve retornar ADFG ADFW")
             assert(converterToUpperCase("TEXTO") === "TEXTO", "converterToUpperCase('TEXTO') deve retornar TEXTO ")
             assert(converterToUpperCase("TexTo") === "TEXTO", "converterToUpperCase('TexTo') deve retornar TEXTO ")
             assert(converterToUpperCase("çãÁ/*") === "ÇÃÁ/*", "converterToUpperCase('çãÁ/*') deve retornar ÇÃÁ/* ")
             assert(converterToUpperCase("ção/*") === "ÇÃO/*", "converterToUpperCase('ção/*') deve retornar ÇÃO/*")
-            assert(converterToUpperCase("são") === "SÃO", "converterToUpperCase('são') deve retornar SÃO")
+        });
+        assert.describe("Converter ToLowerCase", () => {
+            assert(converterToLowerCase(12121) === "12121", "converterToLowerCase(12121) deve retornar '12121'")
+            assert(converterToLowerCase("3232texto") === "3232texto", "converterToLowerCase('3232texto') deve retornar '3232texto'")
+            assert(converterToLowerCase("3232 texto") === "3232 texto", "converterToLowerCase('3232 texto') deve retornar '3232 texto'")
+            assert(converterToLowerCase("texto") === "texto", "converterToLowerCase('texto') deve retornar 'texto'")
+            assert(converterToLowerCase() === "", "converterToLowerCase('') deve retornar ''")
+            assert(converterToLowerCase("           ") === "", "converterToLowerCase('      ') deve retornar ''")
+            assert(converterToLowerCase("           ADFD") === "adfd",  'converterToLowerCase("      ADFD") deve retornar adfd')
+            assert(converterToLowerCase("ADFD           ") === "adfd", "converterToLowerCase('ADFD      ') deve retornar adfd")
+            assert(converterToLowerCase("ADFD       adfd") === "adfd adfd", "converterToLowerCase('ADFD      adfd') deve retornar adfd adfd")
+            assert(converterToLowerCase("adfg adfw") === "adfg adfw", "converterToLowerCase('adfg adfw') deve retornar adfg adfw")
+            assert(converterToLowerCase("TEXTO") === "texto", "converterToLowerCase('TEXTO') deve retornar texto ")
+            assert(converterToLowerCase("TexTo") === "texto", "converterToLowerCase('TexTo') deve retornar texto ")
+            assert(converterToLowerCase("çãÁ/*") === "çãá/*", "converterToLowerCase('çãÁ/*') deve retornar çãá/*")
+            assert(converterToLowerCase("ção/*") === "ção/*", "converterToLowerCase('ção/*') deve retornar ção/*")
+            assert(converterToLowerCase("são") === "são", "converterToLowerCase('são') deve retornar são")
         });
     </script>
 
